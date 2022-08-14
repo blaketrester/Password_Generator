@@ -11,7 +11,7 @@ var upperCaseArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O
 var numberArray = ["1","2","3","4","5","6","7","8","9","0"];
 
 // Prompts for user
-function getPrompts() {
+function PromtUser() {
   choiceArray =[];
  
   userChoice = window.prompt("Please choose a password length between 8 and 128");
@@ -54,7 +54,7 @@ function generatePassword(){
 // Write password to the #password inputs
 function writePassword() {
 
-  var truePrompt = getPrompts();
+  var truePrompt = PromtUser();
 
   if (truePrompt) {
 
