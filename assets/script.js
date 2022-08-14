@@ -13,14 +13,25 @@ function generatePassword() {
 
   var userChoice = window.prompt("Please choose a password length between 8 and 128");
 
-  if (userChoice < 8) {
+  if (userChoice < 8 || userChoice > 128) {
     alert ("Must be between 8 and 128")
-    return;
+    return false;
   }
 
-  if (userChoice > 128) {
-    alert ("Must be between 8 and 128")
-    return;
+  if (confirm("Include lowercase letters?")) {
+    choiceArray = choiceArray.concat(lowerCaseArray);
+  }
+
+  if (confirm("Include uppercase letters?")) {
+    choiceArray = choiceArray.concat(upperCaseArray);
+  }
+
+  if (confirm("Include special characters?")) {
+    choiceArray = choiceArray.concat(specialCharArray);
+  }
+
+  if (confirm("Include numbers?")) {
+    choiceArray = choiceArray.concat(numberArray);
   }
 
   return "Generated password will go here"
